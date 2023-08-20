@@ -37,7 +37,7 @@ Now the Next task will be to tokenize the sentences and change the format of the
 
 
 After tokenization our task is to identify any error done by the tokenizer and fix those errors. For that we compared the number of tokens and the number of tags for each sentence. 
-
+![image](https://github.com/ashrafulhaqove/BanglaNameExtractractor_BanglaBert/assets/30887866/937cabe6-b886-42d8-9745-8de0f7c58bf7)
 
 95 sentences have been wrongly tokenized. After deep inspection we found most of the cases to be related to names which has dot (".") in them and the tokenizer is wrongly tagging it to be an independent tag.
 processing these data will be too much effort compared to the impact it would make. so, dropping the 95 mis tokenized.
