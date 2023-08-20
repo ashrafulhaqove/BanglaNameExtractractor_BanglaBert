@@ -63,10 +63,16 @@ Model_dataset_df['Ner_tag'] = df_final_clean['Ner_tag'	].explode()
 
 Model_dataset_df['#Sentence'] = Model_dataset_df.index
 
-Model_dataset_df.reset_index().head()
-```
+Model_dataset_df.reset_index()
 
-![image](https://github.com/ashrafulhaqove/BanglaNameExtractractor_BanglaBert/assets/30887866/2d0d9647-9964-4cfe-bcd4-f7e1722e395c)
+Model_dataset_df.rename(columns={"#Sentence":"sentence_id","Tokens":"words","Ner_tag":"labels"}, inplace =True)
+
+Model_dataset_df["labels"] = Model_dataset_df["labels"].str.upper()
+
+```
+![image](https://github.com/ashrafulhaqove/BanglaNameExtractractor_BanglaBert/assets/30887866/09654950-ea50-4906-8f85-b15445dad50e)
+
+
 
 ## Model
 
