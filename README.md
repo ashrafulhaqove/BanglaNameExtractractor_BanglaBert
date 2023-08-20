@@ -40,7 +40,6 @@ Then convert the dataset into a dataset that a NER model can accept as training 
 The final solution takes a sentence as an argument and returns the names of persons in a list format . 
 <img width="638" alt="withName" src="https://github.com/ashrafulhaqove/BanglaNameExtractractor_BanglaBert/assets/30887866/334ea11b-f624-4a61-98a5-37a1e4d3decc">
 
-
 It can also tell if there is no person's name in the sentence. 
 
 
