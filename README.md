@@ -7,6 +7,8 @@ As the data source we are using this [dataset](https://raw.githubusercontent.com
 
 ["আফজালুর রহমান নামের এক পরীক্ষার্থী বলেন, সবার হাতে হাতে প্রশ্ন দেখে তিনি ভেবেছিলেন এটি ভুয়া প্রশ্ন।", ["B-PERSON", "L-PERSON", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O", "O"]]
 
+Note that the tagging format used here is the ‘BIL’ format.
+
 ## Preprocessing
 
 ## Model
