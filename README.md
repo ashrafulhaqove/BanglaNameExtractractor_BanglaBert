@@ -75,6 +75,22 @@ Model_dataset_df["labels"] = Model_dataset_df["labels"].str.upper()
 
 
 ## Model
+We used simple transformers to make the training and testing part of the project as simple as possible. And as the NER model we took the 'sagorsarker/bangla-bert-base' .
+
+```python
+!pip install simpletransformers
+```
+
+```python
+from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+```
+```python
+!pip install simpletransformers
+```
+
+
 
 ## Training
 
