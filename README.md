@@ -26,6 +26,8 @@ After tokenization our task is to identify any error done by the tokenizer and f
 processing these data will be too much effort compared to the impact it would make. so, dropping the 95 mis tokenized.
 
 set up a new dataset leaving out the 95 wrongly tokenized sentences.
+Then convert the dataset into a dataset that a NER model can accept as training data. For that we need to explode each tag and tokens into one row for each. Here is the final format of the dataset. 
+
 
 
 ## Model
