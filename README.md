@@ -13,6 +13,20 @@ Note that the tagging format used here is the ‘BIL’ format and the tags are 
 
 Our first task was to collect the data from the Jsonline object and convert it into a  dataframe.
 
+```python
+import json
+import pandas as pd
+
+
+lines = []
+with open(NerPath) as f:
+    lines = f.read().splitlines()
+
+line_dicts = [json.loads(line) for line in lines]
+df_final = pd.DataFrame(line_dicts)
+
+print(df_final)
+```
 
 After doing that we set up a dataframe of 3545 rows of data. Where each row represented a sentence and their NER tags. 
 
