@@ -45,13 +45,28 @@ df_final[ (df_final['Tokens'].str.len() !=  df_final[1].str.len()) ]
 
 ![image](https://github.com/ashrafulhaqove/BanglaNameExtractractor_BanglaBert/assets/30887866/937cabe6-b886-42d8-9745-8de0f7c58bf7)
 
-95 sentences have been wrongly tokenized. After deep inspection we found most of the cases to be related to names which has dot (".") in them and the tokenizer is wrongly tagging it to be an independent tag.
-processing these data will be too much effort compared to the impact it would make. so, dropping the 95 mis tokenized.
-
-set up a new dataset leaving out the 95 wrongly tokenized sentences.
+95 sentences have been wrongly tokenized. After deep inspection we found most of the cases to be related to names which has dot (".") in them and the tokenizer is wrongly indetifying it to be an independent token.
+processing these data will be too much effort compared to the impact it would make. so, dropping the 95 mis tokenized. set up a new dataset leaving out the 95 wrongly tokenized sentences.
+```python
+indexAge = df_final[ (df_final['Tokens'].str.len() !=  df_final[1].str.len()) ].index
+df_final_clean = df_final.copy()
+df_final_clean.drop(indexAge , inplace=True)
+```
 Then convert the dataset into a dataset that a NER model can accept as training data. For that we need to explode each tag and tokens into one row for each. Here is the final format of the dataset. 
 
+```python
+Model_dataset_df = pd.DataFrame()
 
+Model_dataset_df['Tokens'] = df_final_clean['Tokens'	].explode()
+
+Model_dataset_df['Ner_tag'] = df_final_clean['Ner_tag'	].explode()
+
+Model_dataset_df['#Sentence'] = Model_dataset_df.index
+
+Model_dataset_df.reset_index().head()
+```
+
+![image](https://github.com/ashrafulhaqove/BanglaNameExtractractor_BanglaBert/assets/30887866/2d0d9647-9964-4cfe-bcd4-f7e1722e395c)
 
 ## Model
 
