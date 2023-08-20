@@ -34,7 +34,9 @@ After doing that we set up a dataframe of 3545 rows of data. Where each row repr
 
 
 Now the Next task will be to tokenize the sentences and change the format of the dataset which can be fed into a NER model. For Tokenization we are using [BNLP Basic Tokenizer](https://github.com/sagorbrur/bnlp/blob/main/docs/README.md#basic-tokenizer) 
-
+```python
+df_final["Tokens"] = df_final[0].apply(lambda x: basic_t.tokenize(x))
+```
 
 After tokenization our task is to identify any error done by the tokenizer and fix those errors. For that we compared the number of tokens and the number of tags for each sentence. 
 ![image](https://github.com/ashrafulhaqove/BanglaNameExtractractor_BanglaBert/assets/30887866/937cabe6-b886-42d8-9745-8de0f7c58bf7)
