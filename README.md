@@ -30,6 +30,9 @@ print(df_final)
 
 After doing that we set up a dataframe of 3545 rows of data. Where each row represented a sentence and their NER tags. 
 
+![image](https://github.com/ashrafulhaqove/BanglaNameExtractractor_BanglaBert/assets/30887866/54b8a118-b6a0-462b-af05-06652e529032)
+
+
 Now the Next task will be to tokenize the sentences and change the format of the dataset which can be fed into a NER model. For Tokenization we are using [BNLP Basic Tokenizer](https://github.com/sagorbrur/bnlp/blob/main/docs/README.md#basic-tokenizer) 
 
 
