@@ -86,13 +86,25 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 ```
+
 ```python
-!pip install simpletransformers
+model = NERModel('bert', 'sagorsarker/bangla-bert-base',labels=label,args =args)
 ```
 
-
-
 ## Training
+For training we split the dataframe in 80:20 as the train and test split and follow the procedure for training the data. 
+```python
+X= Model_dataset_df[["sentence_id","words"]]
+Y =Model_dataset_df["labels"]
+
+x_train, x_test, y_train, y_test = train_test_split(X,Y, test_size =0.2)
+
+#building up train data and test data
+train_data = pd.DataFrame({"sentence_id":x_train["sentence_id"],"words":x_train["words"],"labels":y_train})
+test_data = pd.DataFrame({"sentence_id":x_test["sentence_id"],"words":x_test["words"],"labels":y_test})
+```
+After that 
+
 
 ## Testing
 
