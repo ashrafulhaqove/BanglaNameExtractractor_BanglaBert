@@ -103,7 +103,14 @@ x_train, x_test, y_train, y_test = train_test_split(X,Y, test_size =0.2)
 train_data = pd.DataFrame({"sentence_id":x_train["sentence_id"],"words":x_train["words"],"labels":y_train})
 test_data = pd.DataFrame({"sentence_id":x_test["sentence_id"],"words":x_test["words"],"labels":y_test})
 ```
-After that 
+After that we need to make a list of labels that will be used to train the model. 
+
+```python
+label = train_data["labels"].unique().tolist()
+```
+![image](https://github.com/ashrafulhaqove/BanglaNameExtractractor_BanglaBert/assets/30887866/565c0e51-2fa0-4a5d-87b6-01578a1ac59b)
+
+Lastly fixing a set of arguments and training the model for the first time 
 
 
 ## Testing
