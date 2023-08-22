@@ -87,9 +87,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 ```
 
-```python
-model = NERModel('bert', 'sagorsarker/bangla-bert-base',labels=label,args =args)
-```
+
+
 
 ## Training
 For training we split the dataframe in 80:20 as the train and test split and follow the procedure for training the data. 
@@ -120,8 +119,17 @@ args.overwrite_output_dir =True
 args.train_batch_size = 32
 args.eval_batch_size = 32
 ```
+```python
+model = NERModel('bert', 'sagorsarker/bangla-bert-base',labels=label,args =args)
+```
+
+```python
+model.train_model(train_data,eval_data = test_data,acc=accuracy_score)
+
+```
 
 ## Testing
+
 
 ## Output
 The final solution takes a sentence as an argument and returns the names of persons in a list format . 
