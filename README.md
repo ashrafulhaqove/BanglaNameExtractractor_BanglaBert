@@ -209,13 +209,24 @@ def NameExtractor(sentence):
   string = string[:-3]
   return string
 ```
+```python
+sentence = "আব্দুর রহিম নামের কাস্টমারকে একশ টাকা বাকি দিলাম মো. হুসাইন নামের এক পরীক্ষার্থী অভিযোগ করেন"
 
-<img width="638" alt="withName" src="https://github.com/ashrafulhaqove/BanglaNameExtractractor_BanglaBert/assets/30887866/334ea11b-f624-4a61-98a5-37a1e4d3decc">
+print(NameExtractor(sentence))x
+```
+![image](https://github.com/ashrafulhaqove/BanglaNameExtractractor_BanglaBert/assets/30887866/887fc96f-ad79-4b7b-a122-5e5350214e93)
+
+
 
 It can also tell if there is no person's name in the sentence. 
 
+```python
+sentence = " ইডেন মহিলা কলেজের পাঠাগার ভবনের দ্বিতীয় তলায় তাঁর পরীক্ষার আসন ছিল।"
+print(NameExtractor(sentence))
+```
 
-<img width="520" alt="withoutName" src="https://github.com/ashrafulhaqove/BanglaNameExtractractor_BanglaBert/assets/30887866/f43e7a86-ed68-4a41-af54-c488594e7164">
+![image](https://github.com/ashrafulhaqove/BanglaNameExtractractor_BanglaBert/assets/30887866/1a1235d1-0746-44c8-97d9-bb0e07c0f14d)
+
 
 
 
