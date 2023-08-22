@@ -109,7 +109,7 @@ label = train_data["labels"].unique().tolist()
 ```
 ![image](https://github.com/ashrafulhaqove/BanglaNameExtractractor_BanglaBert/assets/30887866/565c0e51-2fa0-4a5d-87b6-01578a1ac59b)
 
-Lastly fixing a set of arguments and training the model for the first time 
+Lastly fixing a set of arguments (Hyperparameters) and training the model for the first time 
 
 ```python
 args = NERArgs()
@@ -129,6 +129,13 @@ model.train_model(train_data,eval_data = test_data,acc=accuracy_score)
 ```
 
 ## Testing
+
+After training we can check the evaluation matrix by this code 
+
+And we can test out the model by an example 
+
+We can see that it does identify Named Entities fairly well.
+
 
 
 ## Output
