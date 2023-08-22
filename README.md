@@ -149,7 +149,33 @@ prediction
 
 We can see that it does identify Named Entities fairly well.
 
-## Hyperparameter Optimization
+## Hyperparameter Variations
+As a short project, not much of erroft has been given in the Hyperparameter optimization. We tested out with 3 different variations of Hyperparameters and selected the best performing one based on the evaluation loss. 
+
+```python
+resultId = 1
+
+args = NERArgs()
+args.num_train_epochs = 1
+args.learning_rate = 1e-4
+args.overwrite_output_dir =True
+args.train_batch_size = 32
+args.eval_batch_size = 32
+
+model1 = NERModel('bert', 'sagorsarker/bangla-bert-base',labels=label,args =args)
+
+args , result =  experimentWithHypParamenters(model1 , args)
+
+
+resultlist.append({'id' : resultId , 'args' :args , 'result':result})
+
+```
+```python
+print("result id: " ,resultlist[resultId -1]['id'] , "result : " , resultlist[resultId - 1]['result'] )
+```
+
+result id:  1 result :  {'eval_loss': 0.33157099757854847, 'precision': 0.5328596802841918, 'recall': 0.5649717514124294, 'f1_score': 0.5484460694698354}
+
 
 
 ## Output
