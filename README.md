@@ -153,6 +153,15 @@ We can see that it does identify Named Entities fairly well.
 As a short project, not much of erroft has been given in the Hyperparameter optimization. We tested out with 3 different variations of Hyperparameters and selected the best performing one based on the evaluation loss. 
 
 ```python
+def experimentWithHypParamenters(model , args):
+  model.train_model(train_data,eval_data = test_data,acc=accuracy_score)
+  result, model_outputs, preds_list = model.eval_model(test_data)
+
+  return args , result
+```
+
+
+```python
 resultId = 1
 
 args = NERArgs()
