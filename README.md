@@ -112,6 +112,14 @@ label = train_data["labels"].unique().tolist()
 
 Lastly fixing a set of arguments and training the model for the first time 
 
+```python
+args = NERArgs()
+args.num_train_epochs = 1
+args.learning_rate = 1e-4
+args.overwrite_output_dir =True
+args.train_batch_size = 32
+args.eval_batch_size = 32
+```
 
 ## Testing
 
