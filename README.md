@@ -188,7 +188,28 @@ result id:  1 result :  {'eval_loss': 0.33157099757854847, 'precision': 0.532859
 
 
 ## Output
-The final solution takes a sentence as an argument and returns the names of persons in a list format . 
+The final solution takes a sentence as an argument and returns the names of persons in a list format.
+
+```python
+def NameExtractor(sentence):
+  prediction, model_output = model1.predict([sentence])
+  string = ""
+  for i in prediction[0]:
+    for j in i:
+      if("PERSON" in i[j] ):
+        # print(j)
+        string += j
+        string += " "
+        if(i[j] == "L-PERSON"):
+          # print(", ")
+          string += ", "
+  if(string == ""):
+    print("There is no name in the sentence")
+
+  string = string[:-3]
+  return string
+```
+
 <img width="638" alt="withName" src="https://github.com/ashrafulhaqove/BanglaNameExtractractor_BanglaBert/assets/30887866/334ea11b-f624-4a61-98a5-37a1e4d3decc">
 
 It can also tell if there is no person's name in the sentence. 
