@@ -131,11 +131,25 @@ model.train_model(train_data,eval_data = test_data,acc=accuracy_score)
 ## Testing
 
 After training we can check the evaluation matrix by this code 
+```python
+result, model_outputs, preds_list = model.eval_model(test_data)
+result
+```
+![image](https://github.com/ashrafulhaqove/BanglaNameExtractractor_BanglaBert/assets/30887866/24207fd1-dc18-4cb5-af93-3396bbd92fdf)
+
 
 And we can test out the model by an example 
+```python
+
+prediction, model_output = model.predict(["আব্দুর রহিম নামের কাস্টমারকে একশ টাকা বাকি দিলাম"])
+prediction
+```
+![image](https://github.com/ashrafulhaqove/BanglaNameExtractractor_BanglaBert/assets/30887866/e760b4dd-73fa-4b5c-b814-9ff73e31d20c)
+
 
 We can see that it does identify Named Entities fairly well.
 
+## Hyperparameter Optimization
 
 
 ## Output
